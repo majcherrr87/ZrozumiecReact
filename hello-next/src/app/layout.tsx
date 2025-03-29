@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: "300",
+  style: ["normal"],
+});
+
 export const metadata: Metadata = {
   title: "Witam na mojej apce",
   description: "kot lisa",
@@ -14,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
-      <body>
+      <body className={roboto.className}>
         <Header />
         {children}
         <Footer />
